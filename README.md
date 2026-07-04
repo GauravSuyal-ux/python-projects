@@ -12,6 +12,7 @@ The goal of this repository is to document my learning journey, improve my codin
 # Technologies Used
 Python 3
 <br>
+
 # Purpose-
 * Practice Python fundamentals
 * Build problem-solving skills
