@@ -27,6 +27,9 @@ def modules(a,b):
         return "Error ! Cannot divide by zero."
     return a % b
 
+def exponent(a,b):
+    return a**b
+
 def menu():
     print("\n========== SIMPLE CALCULATOR ==========")
     print("1. Addition")
@@ -34,20 +37,21 @@ def menu():
     print("3. Multiplication")
     print("4. Division")
     print("5. Modules")
-    print("6. Exit")
+    print("6. Exponent")
+    print("7. Exit")
 
 
 while True:
 
     menu()
 
-    choice = input("Enter your choice (1-6): ")
+    choice = input("Enter your choice (1-7): ")
 
-    if choice == "6":
+    if choice == "7":
         print("\nThank you for using the calculator!")
         break
 
-    if choice not in ["1", "2", "3", "4", "5"]:
+    if choice not in ["1", "2", "3", "4", "5", "6"]:
         print("Invalid choice! Please try again.")
         continue
 
@@ -72,3 +76,6 @@ while True:
 
     elif choice == "5":
         print(f"\nResult: {num1} % {num2} = {modules(num1,num2)}")
+
+    elif choice == "6":
+        print (f"Result: {num1} ** {num2} = {exponent(num1,num2)}")
