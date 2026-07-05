@@ -30,6 +30,11 @@ def modules(a,b):
 def exponent(a,b):
     return a**b
 
+def floor_division(a,b):
+    if b == 0:
+        return "Error ! Cannot divide by zero." 
+    return a // b
+
 def menu():
     print("\n========== SIMPLE CALCULATOR ==========")
     print("1. Addition")
@@ -38,20 +43,20 @@ def menu():
     print("4. Division")
     print("5. Modules")
     print("6. Exponent")
-    print("7. Exit")
+    print("7. Floor Division")
+    print("8. Exit")
 
 
 while True:
 
     menu()
+    choice = input("Enter your choice (1-8): ")
 
-    choice = input("Enter your choice (1-7): ")
-
-    if choice == "7":
+    if choice == "8":
         print("\nThank you for using the calculator!")
         break
 
-    if choice not in ["1", "2", "3", "4", "5", "6"]:
+    if choice not in ["1", "2", "3", "4", "5", "6", "7"]:
         print("Invalid choice! Please try again.")
         continue
 
@@ -79,3 +84,6 @@ while True:
 
     elif choice == "6":
         print (f"Result: {num1} ** {num2} = {exponent(num1,num2)}")
+
+    elif choice == "7":
+        print(f"Result: {num1} // {num2} = {floor_division(num1,num2)}")
