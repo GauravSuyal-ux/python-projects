@@ -22,26 +22,32 @@ def divide(a, b):
     return a / b
 
 
+def modules(a,b):
+    if b == 0:
+        return "Error ! Cannot divide by zero."
+    return a % b
+
 def menu():
     print("\n========== SIMPLE CALCULATOR ==========")
     print("1. Addition")
     print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
-    print("5. Exit")
+    print("5. Modules")
+    print("6. Exit")
 
 
 while True:
 
     menu()
 
-    choice = input("Enter your choice (1-5): ")
+    choice = input("Enter your choice (1-6): ")
 
-    if choice == "5":
+    if choice == "6":
         print("\nThank you for using the calculator!")
         break
 
-    if choice not in ["1", "2", "3", "4"]:
+    if choice not in ["1", "2", "3", "4", "5"]:
         print("Invalid choice! Please try again.")
         continue
 
@@ -62,4 +68,7 @@ while True:
         print(f"\nResult: {num1} * {num2} = {multiply(num1, num2)}")
 
     elif choice == "4":
-        print(f"\nResult: {num1} ÷ {num2} = {divide(num1, num2)}")
+        print(f"\nResult: {num1} / {num2} = {divide(num1, num2)}")
+
+    elif choice == "5":
+        print(f"\nResult: {num1} % {num2} = {modules(num1,num2)}")
