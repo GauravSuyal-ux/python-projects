@@ -69,6 +69,7 @@ while True:
 
     if choice == "1":
         print(f"\nResult: {num1} + {num2} = {add(num1, num2)}")
+    
 
     elif choice == "2":
         print(f"\nResult: {num1} - {num2} = {subtract(num1, num2)}")
