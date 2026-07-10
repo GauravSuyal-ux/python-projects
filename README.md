@@ -8,7 +8,9 @@ The goal of this repository is to document my learning journey, improve my codin
 
 # Projects Included
 1.Calculator
+<br>
 2.Guessing Game
+<br>
 3.Rock,Paper,Scissors 
 
 # Technologies Used
