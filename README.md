@@ -8,6 +8,8 @@ The goal of this repository is to document my learning journey, improve my codin
 
 # Projects Included
 1.Calculator
+2.Guessing Game
+3.Rock,Paper,Scissors 
 
 # Technologies Used
 Python 3
