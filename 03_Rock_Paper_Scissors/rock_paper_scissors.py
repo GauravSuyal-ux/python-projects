@@ -30,4 +30,13 @@ def decide_winner(user_choice, computer_choice):
 
     else:
         return"Computer Wins"
-   
+
+
+def play_game():
+    user_choice=get_user_choice()
+    computer_choice=get_computer_choice()
+    result= decide_winner(user_choice, computer_choice)
+    print(f"You chose:{user_choice}")
+    print(f"Computer chose:{computer_choice}")
+    print(result) 
+      
