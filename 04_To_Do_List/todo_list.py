@@ -13,5 +13,12 @@ while True:
         task=input("Please enter your task:").strip()
         todo_list.append(task)
         print("Task added Successfully")
-    
+    elif user_choice==2:
+        if len(todo_list)==0:
+            print("No Tasks Available.")
+        else:
+            counter=1
+            for task in todo_list:
+                print(f"{counter}.{task}")
+                counter+=1
                 
