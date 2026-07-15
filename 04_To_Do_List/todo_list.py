@@ -1,11 +1,21 @@
 todo_list=[]
 
+def view_tasks():
+    if len(todo_list)==0:
+            print("No Tasks Available.")
+    else:
+        counter=1
+        for task in todo_list:
+            print(f"{counter}.{task}")
+            counter+=1
+                
+
 while True:
     print ("==== Terminal Based To Do List ====")
-    print("Menu-\n1.Add Task\n2.View Tasks\n3.Delete Task\n4.Exit")
+    print("Menu-\n1.Add Task\n2.View Tasks\n3.Delete Task\n4.Edit Task\n5.Exit")
 
     try:
-        user_choice=int(input("Enter your choice (1-4):"))
+        user_choice=int(input("Enter your choice (1-5):"))
     except ValueError:
         print("Invalid Choice! Please enter a number")
         continue
@@ -17,23 +27,18 @@ while True:
 
 
     elif user_choice==2:
-        if len(todo_list)==0:
-            print("No Tasks Available.")
-        else:
-            counter=1
-            for task in todo_list:
-                print(f"{counter}.{task}")
-                counter+=1
+        view_tasks()
                 
     elif user_choice==3:
          while True:
             if len(todo_list)==0:
                 print("Sorry! No tasks available")
                 break
-        
+            
             else:
+                view_tasks()
                 try:
-                    user_input=int(input(f"Enter the no. of task from 1-{len(todo_list)}which you want delete: "))
+                    user_input=int(input(f"Enter the no. of task from 1- {len(todo_list)}which you want to delete: "))
                 except ValueError:
                     print("Please enter a valid integer:")
                     continue
@@ -44,3 +49,25 @@ while True:
                     break
                 else:
                     print(f"Please enter the number which is >=1 and <={len(todo_list)}")
+
+    elif user_choice==4:
+        
+        if len(todo_list)==0:
+            print("No task Available ")
+        else:
+            while True:
+                view_tasks()
+                try:
+                    user_edit_input=int(input(f"Enter the no. of task from 1- {len(todo_list)} which you want to edit: "))
+                except ValueError:
+                    print("Enter a valid integer")
+                    continue
+            
+                if  1<=user_edit_input<=len(todo_list):
+                    new_input=input("Enter the new task which you want to edit:")
+                    todo_list[user_edit_input-1]=new_input
+                    print("Task edited successfully")
+                    break
+                else:
+                    print(f"Enter the number from 1- {len(todo_list)}:")
+            
