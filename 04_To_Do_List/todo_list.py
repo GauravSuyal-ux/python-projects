@@ -100,4 +100,5 @@ while True:
         print("Thanks for using To-Do list. Goodbye!")
         break
 
-    
+    else:
+        print("Invalid Choice! Please enter your choice from 1-6:")
