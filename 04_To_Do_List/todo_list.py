@@ -12,7 +12,7 @@ def view_tasks():
 
 while True:
     print ("==== Terminal Based To Do List ====")
-    print("Menu-\n1.Add Task\n2.View Tasks\n3.Delete Task\n4.Edit Task\n5.Exit")
+    print("Menu-\n1.Add Task\n2.View Tasks\n3.Delete Task\n4.Edit Task\n5.Clear All Tasks\n6.Exit")
 
     try:
         user_choice=int(input("Enter your choice (1-5):"))
@@ -70,4 +70,28 @@ while True:
                     break
                 else:
                     print(f"Enter the number from 1- {len(todo_list)}:")
-            
+
+    elif user_choice==5:
+        if len(todo_list)==0:
+            print("No Tasks Available")
+        else:
+            print("Available Tasks:")
+            view_tasks()
+            while True:
+                user_ans1=input("This will permanently delete all tasks. Continue? (y/n):").lower().strip()
+                if user_ans1=="y":
+                    user_ans2=input("Are you absolutely sure? (y/n):").lower().strip()
+                    if user_ans2=="y":
+                        todo_list.clear()
+                        print("Tasks deleted successfully..")
+                        break
+                    elif user_ans2=="n":
+                        print("Operation Cancelled..")
+                        break
+                    else:
+                        print("Invalid Input! Please enter '(y/n)':")
+                elif user_ans1=="n":
+                    print("Operation Cancelled..")
+                    break
+                else:
+                    print("Invalid input! Please enter '(y/n)':")
