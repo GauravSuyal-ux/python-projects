@@ -38,7 +38,7 @@ while True:
             else:
                 view_tasks()
                 try:
-                    user_input=int(input(f"Enter the no. of task from 1- {len(todo_list)}which you want to delete: "))
+                    user_input=int(input(f"Enter the no. of task from 1-{len(todo_list)}which you want to delete: "))
                 except ValueError:
                     print("Please enter a valid integer:")
                     continue
@@ -58,7 +58,7 @@ while True:
             while True:
                 view_tasks()
                 try:
-                    user_edit_input=int(input(f"Enter the no. of task from 1- {len(todo_list)} which you want to edit: "))
+                    user_edit_input=int(input(f"Enter the no. of task from 1-{len(todo_list)} which you want to edit: "))
                 except ValueError:
                     print("Enter a valid integer")
                     continue
@@ -95,3 +95,9 @@ while True:
                     break
                 else:
                     print("Invalid input! Please enter '(y/n)':")
+    
+    elif user_choice==6:
+        print("Thanks for using To-Do list. Goodbye!")
+        break
+
+    
