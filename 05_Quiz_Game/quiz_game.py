@@ -1,4 +1,4 @@
-print("======Python Quick ======")
+print("======Python Quiz ======")
 questions = [
     ["Which state is known as Devbhoomi?","uttarakhand"],
     ["Which city is known as Pink City?","jaipur"],
@@ -7,18 +7,22 @@ questions = [
 
 
 def start_quiz():
-    score=0
+    marks=0
     for question in questions:
         print(question[0])
         user_ans = input("Enter your answer: ").lower().strip()
 
         if user_ans == question[1]:
             print("Correct!")
-            score += 1
+            marks += 1
         else:
             print("Incorrect!")
             print(f"The correct answer is: {question[1]}")
-    print(f"Your Final Score is:{score}")
+    return marks
+
+def show_score(marks):
+    print(f"Your final score is:{marks}")
+
 
 
 while True:
@@ -31,7 +35,8 @@ while True:
     
     if user_choice==1:
         print("Quiz will start soon...")
-        start_quiz()
+        marks = start_quiz()
+        show_score(marks)
         
     elif user_choice==2:
         print("Thanks for using the Quiz, Goodbye! ")
