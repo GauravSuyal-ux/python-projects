@@ -8,7 +8,8 @@ questions = [
 
 def start_quiz():
     marks=0
-    for question in questions:
+    for question_no,question in enumerate(questions,start=1):
+        print(f"\nQuestion {question_no}:")
         print(question[0])
         user_ans = input("Enter your answer: ").lower().strip()
 
@@ -20,8 +21,8 @@ def start_quiz():
             print(f"The correct answer is: {question[1]}")
     return marks
 
-def show_score(marks):
-    print(f"Your final score is:{marks}")
+def show_score(marks,total_questions) :
+    print(f"Your final score is:{marks}/{total_questions}")
 
 
 
@@ -36,7 +37,7 @@ while True:
     if user_choice==1:
         print("Quiz will start soon...")
         marks = start_quiz()
-        show_score(marks)
+        show_score(marks,len(questions))
         
     elif user_choice==2:
         print("Thanks for using the Quiz, Goodbye! ")
