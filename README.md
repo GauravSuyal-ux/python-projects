@@ -12,6 +12,10 @@ The goal of this repository is to document my learning journey, improve my codin
 2.Guessing Game
 <br>
 3.Rock,Paper,Scissors 
+<br>
+4.To-Do List
+<br>
+5.Quiz Game
 
 # Technologies Used
 Python 3
