@@ -21,6 +21,7 @@ def start_quiz():
             print(f"The correct answer is: {question[1]}")
     return marks
 
+
 def show_score(marks,total_questions) :
     print(f"Your final score is:{marks}/{total_questions}")
 
@@ -33,12 +34,28 @@ while True:
     except ValueError:
         print("Invalid Input! Please enter a valid integer:")
         continue
-    
+
     if user_choice==1:
         print("Quiz will start soon...")
-        marks = start_quiz()
-        show_score(marks,len(questions))
-        
+        play_again= True
+
+        while play_again:
+            marks = start_quiz()
+            show_score(marks,len(questions))
+            
+            while True:
+                replay_input=input("Do you want to play again? '(y/n)':").lower().strip()                
+                if replay_input=="y":
+                    print("Quiz Starting again...")
+                    break
+                elif replay_input=="n":
+                    play_again=False
+                    print("Thank you for playing.")
+                    break
+                else:
+                    print("Please enter '(y/n)':")
+                    
+
     elif user_choice==2:
         print("Thanks for using the Quiz, Goodbye! ")
         break
