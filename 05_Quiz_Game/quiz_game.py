@@ -1,3 +1,4 @@
+import random
 print("======Python Quiz ======")
 questions = [
     ["Which state is known as Devbhoomi?","uttarakhand"],
@@ -23,7 +24,7 @@ def start_quiz():
 
 
 def show_score(marks,total_questions) :
-    print(f"Your final score is:{marks}/{total_questions}")
+    print(f"Your final score is: {marks}/{total_questions}\n")
 
 
 
@@ -36,10 +37,11 @@ while True:
         continue
 
     if user_choice==1:
-        print("Quiz will start soon...")
+        print("\nQuiz will start soon...\n")
         play_again= True
 
         while play_again:
+            random.shuffle(questions)
             marks = start_quiz()
             show_score(marks,len(questions))
             
@@ -53,7 +55,7 @@ while True:
                     print("Thank you for playing.")
                     break
                 else:
-                    print("Please enter '(y/n)':")
+                    print("Invalid input! Please enter 'y' or 'n'.")
                     
 
     elif user_choice==2:
